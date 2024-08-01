@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AppProvider extends ChangeNotifier {
-  int number = 0;
-  int number1 = 0;
-  AppProvider() {
-    sayHello();
+  int _x = 0;
+  int get x => _x;
+
+  void incrementX() {
+    _x++;
+    notifyListeners(); // update() or setState()
   }
 
-  void sayHello() {
-    print("hello");
-    number += 1;
-
-    notifyListeners();
-    number1 += 2;
+  void decrementX() {
+    _x++;
+    notifyListeners(); // update() or setState()
   }
 }

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_tutorail/app-provider.dart';
 import 'package:provider_tutorail/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -19,12 +20,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => AppProvider(),
-      child: MaterialApp(
+      child: GetMaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Provider"),
+            title: const Text("Provider"),
           ),
-          body: HomePage(),
+          body: const HomePage(),
         ),
       ),
     );
